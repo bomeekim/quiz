@@ -1,11 +1,13 @@
 #include "all.h"
 #include <stdio.h>
 
+unsigned int bits[MAX_N];
+
 void print_binary(unsigned int n)
 {
-    int i = 7;
+    int i;
     
-    for (i; i >= 0; --i) {
+    for (i = 7; i >= 0; --i) {
         printf("%d", (n >> i) & 1);
     }
     printf("\n");
@@ -13,11 +15,11 @@ void print_binary(unsigned int n)
 
 void remain_binary(unsigned int n)
 {
-    int i = 7;
+    int i;
   
     printf("\n====remain_binary====\n");
     
-    for (i; i >= 0; --i) {
+    for (i = 7; i >= 0; --i) {
         if(i == 3 || i == 1){
             printf("%d", (n >> i) & 1);
         }else{
@@ -31,13 +33,29 @@ void remain_binary(unsigned int n)
 void reverse_binary(unsigned int n)
 {
 
-    int i = 7;
+    int i;
     n ^= 245;
     
     printf("\n====reverse_binary====\n");
     
-    for (i; i >= 0; --i) {
+    for (i = 7; i >= 0; --i) {
         printf("%d", (n >> i) & 1);
+    }
+    
+    printf("\n");
+}
+
+void reverse_array(unsigned int n)
+{
+    int arr[MAX_N];
+    int i,j;
+    
+    for (i = 7; i >= 0; --i) {
+        arr[i] = (n >> i) & 1;
+    }
+    
+    for(j = 0; j < (sizeof(arr) / sizeof(arr[0])); j++){
+        printf("%d", arr[j]);
     }
     
     printf("\n");
@@ -64,6 +82,12 @@ int main(int argc, char* argv[])
 	for(i=0; i<MAX_N; i++) {
 		print_binary(array[i]);
 	}
+    
+    printf("\n====print_reverse_array====\n");
+    
+    for(i=0; i<MAX_N; i++) {
+        reverse_array(array[i]);
+    }
 	
 	return 0;
 }
