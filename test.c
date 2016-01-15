@@ -1,8 +1,6 @@
 #include "all.h"
 #include <stdio.h>
 
-unsigned int bits[MAX_N];
-
 void print_binary(unsigned int n)
 {
     int i;
@@ -32,7 +30,6 @@ void remain_binary(unsigned int n)
 
 void reverse_binary(unsigned int n)
 {
-
     int i;
     n ^= 245;
     
