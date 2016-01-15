@@ -3,8 +3,12 @@
 
 void print_binary(unsigned int n)
 {
-
-
+    int i = 7;
+    
+    for (i; i >= 0; --i) {
+        printf("%d", (n >> i) & 1);
+    }
+    printf("\n");
 }
 
 int main(int argc, char* argv[])
