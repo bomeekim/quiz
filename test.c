@@ -21,7 +21,7 @@ void remain_binary(unsigned int n)
         if(i == 3 || i == 1){
             printf("%d", (n >> i) & 1);
         }else{
-            printf("%d", (n >> i) & 0);
+            printf("%d", (n >> i) & 0); // 특정 비트를 강제로 0으로 만듬 (mask off -> &연산자)
         }
     }
     
@@ -31,7 +31,7 @@ void remain_binary(unsigned int n)
 void reverse_binary(unsigned int n)
 {
     int i;
-    n ^= 245;
+    n ^= 245; // 11110101 반전시키고자 하는 부분만 반전 (마스크반전 -> ^연산자)
     
     printf("\n====reverse_binary====\n");
     
