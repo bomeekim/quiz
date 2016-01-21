@@ -28,7 +28,7 @@ includes = $(wildcard $(INC)/*.h)
 
 # Build rule
 all: $(TARGET)
-	mkdir $(OUTDIR)
+	@mkdir -p $(OUTDIR)
 
 $(TARGET): $(OBJECTS)
 	$(CC) $(OBJECTS) -o $@
